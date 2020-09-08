@@ -37,6 +37,7 @@ let mapleader = ","
 " Quitting insert mode without reaching for the Escape key
 imap jj <Esc>
 
+nmap <leader>q :q<cr>
 nmap <leader>w :w!<cr>
 
 " Save file as sudo
