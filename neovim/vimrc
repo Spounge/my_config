@@ -261,14 +261,25 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'jlanzarotta/bufexplorer'
 
-let g:bufExplorerSortBy='name'
+let g:bufExplorerShowDirectories=0   " Do not show directories. ???
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerSortBy='fullpath'   " Sort by full file path name.
+
+" Unmap other hotkey CHECK IF THIS IS COMMON
+let g:bufExplorerDisableDefaultKeyMapping=1
+
+"let g:bufExplorerSortBy='name'
+
+nnoremap <silent> <Leader>be :BufExplorer<CR>
+
 
 Plug 'kien/ctrlp.vim'
 
+let g:ctrlp_max_height = 20
 let g:ctrlp_working_path_mode = 0
 
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git'
+" Use wildignore
+" let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git'
 
 Plug 'itchyny/lightline.vim'
 
@@ -319,33 +330,46 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 Plug 'preservim/nerdtree'
 
 let NERDTreeQuitOnOpen=1
-let NERDTreeIgnore=['\.pyc$', '__pycache__']
+let NERDTreeRespectWildIgnore=1
+
+" Use wildignore
+" let NERDTreeIgnore=['\.pyc$', '__pycache__']
 
 map <silent> <F2> :NERDTreeToggle<CR>
 
-Plug 'chr4/nginx.vim'
-
-Plug 'amix/open_file_under_cursor.vim'
+" Plug 'chr4/nginx.vim'
 
 Plug 'godlygeek/tabular'
 
+Plug 'edkolev/tmuxline.vim'
+
 Plug 'tpope/vim-commentary'
 
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
+
+" set conceallevel=2
+
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_no_default_key_mappings = 1
+" let g:vim_markdown_new_list_item_indent = 2
+
+Plug 'sheerun/vim-polyglot'
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_no_default_key_mappings = 1
 
 set conceallevel=2
 
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_new_list_item_indent = 2
-
 Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'vimwiki/vimwiki'
+
+let g:vimwiki_list = [{'path': '~/.config/nvim/vimwiki'}]
 
 Plug 'stephpy/vim-yaml'
 
 Plug 'maxbrunsfeld/vim-yankstack'
-
-Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
