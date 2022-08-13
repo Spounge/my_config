@@ -1,4 +1,7 @@
 - hosts: localhost
   roles:
+    # - fish
     - neovim
     - tmux
+    # - gitconfig
+    # - niceapplicatios # shellcheck neofetch htop tree # rename that

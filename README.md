@@ -1,3 +1,10 @@
+# Dotfiles
+
+## TODO
+
+Agnostic package installation: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
+
+
 vim
 
 pastemode doesnt do anything
