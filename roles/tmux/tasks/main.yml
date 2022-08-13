@@ -1,0 +1,13 @@
+- name: Install tmux
+  become: yes
+  ansible.builtin.apt:
+    name: neovim
+    state: latest
+    update_cache: yes
+
+- name: Create symbolic link to .tmux.conf
+  # XDG compliancy only added since tmux 3.1
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/tmux.conf'
+    dest: ~/.tmux.conf
+    mode: '0644'

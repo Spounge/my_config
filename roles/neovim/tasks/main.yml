@@ -1,0 +1,25 @@
+- name: Install neovim
+  become: yes
+  ansible.builtin.apt:
+    name: neovim
+    state: latest
+    update_cache: yes
+
+- name: Create symbolic link to .config/nvim/
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/nvim'
+    dest: ~/.config/nvim
+    state: link
+    mode: '0755'
+
+- name: Create .config/nvim/autoload/
+  ansible.builtin.file:
+    path: ~/.config/nvim/autoload
+    state: directory
+    mode: '0755'
+
+- name: Download .config/nvim/autoload/plug.vim
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.config/nvim/autoload/plug.vim
+    mode: '0644'
