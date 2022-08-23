@@ -6,7 +6,11 @@ Consider using <leader>xx to open
 https://github.com/vimwiki/vimwiki
 
 === Hotkeys ===
+vim
+autocomplete insert mode ctrl+n/p
+q: command history (disable)
 
+vimwiki
 * <Leader>ww -- Open default wiki index file.
 * <Leader>wt -- Open default wiki index file in a new tab.
 * <Leader>ws -- Select and open wiki index file.
@@ -19,3 +23,19 @@ https://github.com/vimwiki/vimwiki
 * <Backspace> -- Go back to parent(previous) wiki link.
 * <Tab> -- Find next wiki link.
 * <Shift-Tab> -- Find previous wiki link.
+
+== Curl commands ==
+
+curl cheat.sh
+https://github.com/chubin/cheat.sh
+curl ifconfig.me # gives your external ip
+
+== Fish ==
+
+=== Hotkey ===
+
+alt+left prevd
+alt+next nextd
+alt+l ls
+alt+h print man
+alt+s prepend last command with sudo

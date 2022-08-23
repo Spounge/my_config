@@ -1,7 +1,14 @@
 - hosts: localhost
   roles:
-    # - fish
-    - neovim
-    - tmux
-    # - gitconfig
-    # - niceapplicatios # shellcheck neofetch htop tree # rename that
+    - role: fish
+      tags: [ fish ]
+    - role: git
+      tags: [ git ]
+    - role: neovim
+      tags: [ neovim ]
+    # - role: starship
+    #   tags: [ starship ]
+    - role: tmux
+      tags: [ tmux ]
+    - role: tools
+      tags: [ tools ]

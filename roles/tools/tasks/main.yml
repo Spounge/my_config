@@ -1,0 +1,32 @@
+- name: Install tools
+  become: yes
+  ansible.builtin.apt:
+    name: '{{ item }}'
+    state: latest
+    update_cache: yes
+  loop:
+    - bat # create abbr w ansible / disable pager ??
+    # - dust # du replacement / test
+    - exa # create alias w ansible
+    # - fd # Replacement of fd, check syntax
+    - htop
+    - neofetch
+    # - procs # Replacement of ps, step on htop's turf
+    # - ripgrep # Replacement of grep
+    #
+    # - grex
+    # - shellcheck
+
+- name: Create symbolic link to .config/htop/
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/htop'
+    dest: ~/.config/htop
+    state: link
+    mode: '0755'
+
+- name: Create symbolic link to .config/neofetch/
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/neofetch'
+    dest: ~/.config/neofetch
+    state: link
+    mode: '0755'

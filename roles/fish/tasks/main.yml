@@ -1,0 +1,19 @@
+- name: Install fish
+  become: yes
+  ansible.builtin.apt:
+    name: fish
+    state: latest
+    update_cache: yes
+
+- name: Make fish the default shell
+  become: yes
+  ansible.builtin.user:
+    name: '{{ ansible_user_id }}'
+    shell: /usr/bin/fish
+
+- name: Create symbolic link to .config/fish/
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/fish'
+    dest: ~/.config/fish
+    state: link
+    mode: '0755'

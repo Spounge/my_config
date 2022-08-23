@@ -1,0 +1,8 @@
+[alias]
+	cm = commit -m
+	l  = log --all --decorate --graph --oneline
+	s  = status --branch --short --untracked-files=all
+
+[user]
+	email = nelson.angelique@epitech.eu
+	name = Nelson ANGELIQUE

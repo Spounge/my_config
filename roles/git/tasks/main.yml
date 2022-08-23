@@ -1,0 +1,14 @@
+- name: Install git
+  become: yes
+  ansible.builtin.apt:
+    name: git
+    state: latest
+    update_cache: yes
+
+- name: Create symbolic link to .config/git/
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/git'
+    dest: ~/.config/git
+    state: link
+    mode: '0755'
+

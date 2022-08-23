@@ -9,5 +9,5 @@
   # XDG compliancy only added since tmux 3.1
   ansible.builtin.file:
     src: '{{ role_path }}/files/tmux.conf'
-    dest: ~/.tmux.conf
+    dest: ~/.config/tmux/tmux.conf
     mode: '0644'
